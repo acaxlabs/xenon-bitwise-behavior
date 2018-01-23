@@ -1,0 +1,31 @@
+﻿<link rel="import" href="../polymer/polymer.html" />
+
+<!--
+
+    Simplifies the functionality of a few bitwise operations for bit flags.
+
+@group Xenon Elements
+@demo demo/index.html
+-->
+
+<script>
+    window.ACAXLabs = window.ACAXLabs || {};
+    ACAXLabs.XenonBitwiseBehavior = {
+        /* bitwise operation to see if this vaule is enabled */
+        hasFlag: function (flags, value) {
+            return (flags & value) == value;
+        },
+        /* bitwise operation to add value to flags */
+        addFlag: function (flags, value) {
+            return flags |= value;
+        },
+        /* bitwise operation to remove value from flags */
+        removeFlag: function (flags, value) {
+            return flags &= ~value
+        },
+        /* bitwise operation to toggle the value in flags */
+        toggleFlag: function (flags, value) {
+            return flags ^= value;
+        }
+    }
+</script>

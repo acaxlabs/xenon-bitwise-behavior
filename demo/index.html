@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Xenon Bitwise Behavior Demo</title>
+</head>
+<body>
+    <script src="../../webcomponentsjs/webcomponents.min.js"></script>
+    <link rel="import" href="../../polymer/polymer.html" />
+    <link rel="import" href="../xenon-bitwise-behavior.html" />
+    <script></script>
+    <dom-module id="bit-demo">
+        <template>
+            <h2>Flags value is [[enabledFlags]] </h2>
+            <div>Check if 2 bit is enabled</div>
+            <template is="dom-if" if="[[hasFlag(enabledFlags, 2)]]">
+                <div>2 flag is enabled</div>
+            </template>
+            <template is="dom-if" if="[[!hasFlag(enabledFlags, 2)]]">
+                <div>2 flag is <b>NOT</b> enabled</div>
+            </template>
+            <hr />
+            <div>Check if 16 bit is enabled</div>
+            <template is="dom-if" if="[[hasFlag(enabledFlags, 16)]]">
+                <div>16 flag is enabled</div>
+            </template>
+            <template is="dom-if" if="[[!hasFlag(enabledFlags, 16)]]">
+                <div>16 flag is <b>NOT</b> enabled</div>
+            </template>
+        </template>
+        <script>
+            Polymer({
+                is: "bit-demo",
+                properties: {
+                    flags: { type: Object, value: { foo: 1, bar: 2, willy: 4, wonka: 8, chess: 16, club: 32 } },
+                },
+                behaviors: [
+                    ACAXLabs.XenonBitwiseBehavior
+                ],
+                ready: function () {
+                    this.set("enabledFlags", this.flags.foo | this.flags.willy | this.flags.chess);
+                    console.log("enabled flags", this.enabledFlags);
+                }
+            });
+        </script>
+    </dom-module>
+    <bit-demo></bit-demo>
+</body>
+</html>

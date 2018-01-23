@@ -1,0 +1,29 @@
+{
+  "name": "xenon-bitwise-behavior",
+  "version": "1.0",
+  "description": "Simplifies the functionality of a few bitwise operations for bit flags.",
+  "authors": [
+    "ACA[X]Labs",
+    "Josuha Hickerson"
+  ],
+  "keywords": [
+    "web-components",
+    "polymer",
+    "bitwise",
+    "operator"
+  ],
+  "main": "xenon-bitwise-behavior.html",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/acaxlabs/xenon-bitwise-behavior.git"
+  },
+  "license": "https://github.com/acaxlabs/xenon-bitwise-behavior/blob/master/LICENSE.txt",
+  "homepage": "https://github.com/acaxlabs/xenon-bitwise-behavior",
+  "ignore": [],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.2.0"
+  },
+  "devDependencies": {
+  }
+}
