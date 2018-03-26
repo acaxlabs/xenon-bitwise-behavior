@@ -17,15 +17,15 @@
         },
         /* bitwise operation to add value to flags */
         addFlag: function (flags, value) {
-            return Number(flags) |= Number(value);
+            return flags |= Number(value);
         },
         /* bitwise operation to remove value from flags */
         removeFlag: function (flags, value) {
-            return Number(flags) &= ~Number(value)
+            return flags &= ~Number(value)
         },
         /* bitwise operation to toggle the value in flags */
         toggleFlag: function (flags, value) {
-            return Number(flags) ^= Number(value);
+            return flags ^= Number(value);
         }
     }
 </script>
