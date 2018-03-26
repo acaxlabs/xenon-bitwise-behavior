@@ -13,19 +13,19 @@
     ACAXLabs.XenonBitwiseBehavior = {
         /* bitwise operation to see if this vaule is enabled */
         hasFlag: function (flags, value) {
-            return (flags & value) == value;
+            return (Number(flags) & Number(value)) == Number(value);
         },
         /* bitwise operation to add value to flags */
         addFlag: function (flags, value) {
-            return flags |= value;
+            return Number(flags) |= Number(value);
         },
         /* bitwise operation to remove value from flags */
         removeFlag: function (flags, value) {
-            return flags &= ~value
+            return Number(flags) &= ~Number(value)
         },
         /* bitwise operation to toggle the value in flags */
         toggleFlag: function (flags, value) {
-            return flags ^= value;
+            return Number(flags) ^= Number(value);
         }
     }
 </script>
